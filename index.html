@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>India IT Bridge | Premium Technology Solutions</title>
+  <meta name="description" content="India IT Bridge offers cloud setup, networking, IT infrastructure, websites, digital marketing, AI adoption, CMDB management, SOP support, service request management, and custom tool development." />
+  <style>
+    :root {
+      --bg: #06111f;
+      --bg-soft: rgba(255,255,255,0.06);
+      --card: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.12);
+      --text: #f5f7fb;
+      --muted: #b7c0d1;
+      --blue: #2ea8ff;
+      --orange: #ff9b24;
+      --green: #27c36b;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 24px;
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(46,168,255,0.18), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(39,195,107,0.12), transparent 25%),
+        radial-gradient(circle at 20% 30%, rgba(255,155,36,0.12), transparent 25%),
+        linear-gradient(180deg, #071224 0%, #06111f 40%, #081625 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .section { padding: 96px 0; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #d7e2f4;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      border-radius: 999px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .title {
+      font-size: clamp(34px, 6vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin: 18px 0 18px;
+    }
+    .title span {
+      background: linear-gradient(90deg, var(--blue), #ffffff 45%, var(--orange));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .lead {
+      font-size: clamp(17px, 2vw, 21px);
+      color: var(--muted);
+      max-width: 760px;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(6,17,31,0.55);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .brand img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+    .brand strong { font-size: 1.05rem; }
+    .menu {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      color: #d4def0;
+      font-size: 0.95rem;
+    }
+    .btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: 0.25s ease;
+    }
+    .btn-primary {
+      color: #08111d;
+      background: linear-gradient(135deg, #ffffff, #dcecff);
+      box-shadow: 0 12px 30px rgba(255,255,255,0.12);
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      border-color: var(--border);
+      color: var(--text);
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+    .hero {
+      padding: 70px 0 40px;
+      min-height: calc(100vh - 76px);
+      display: flex;
+      align-items: center;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 34px;
+      align-items: center;
+    }
+    .hero-card, .glass, .service-card, .metric, .contact-card, .cta-box {
+      background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .hero-visual {
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: -30% auto auto -20%;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(46,168,255,0.28), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-logo {
+      padding: 26px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(10,26,45,0.95), rgba(7,20,35,0.85));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .pill-row {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #dbe5f6;
+      font-size: 0.93rem;
+    }
+    .stats {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .metric { padding: 20px; }
+    .metric h3 {
+      margin: 0 0 6px;
+      font-size: 2rem;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .metric p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .about-grid, .process-grid, .contact-grid, .footer-grid {
+      display: grid;
+      gap: 24px;
+    }
+    .about-grid { grid-template-columns: 1fr 1fr; }
+    .process-grid { grid-template-columns: repeat(4, 1fr); }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1.3fr 1fr 1fr; }
+    .glass { padding: 28px; }
+    .section-head {
+      margin-bottom: 34px;
+      max-width: 780px;
+    }
+    .section-head h2 {
+      margin: 14px 0 12px;
+      font-size: clamp(30px, 4vw, 50px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+    .section-head p { color: var(--muted); font-size: 1.05rem; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .service-card {
+      padding: 24px;
+      min-height: 100%;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,255,255,0.18);
+    }
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      background: linear-gradient(135deg, rgba(46,168,255,0.22), rgba(255,155,36,0.18));
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 16px;
+    }
+    .service-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+    .service-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .service-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #dce5f5;
+    }
+    .service-card li { margin-bottom: 7px; }
+    .highlight { background: linear-gradient(135deg, rgba(46,168,255,0.12), rgba(255,155,36,0.10)); }
+    .quote {
+      font-size: clamp(24px, 3vw, 38px);
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      margin: 0;
+    }
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .mini-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .mini-card h4 { margin: 0 0 8px; }
+    .mini-card p { margin: 0; color: var(--muted); }
+    .process-step {
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .process-step span {
+      display: inline-grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .cta-box {
+      padding: 40px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(46,168,255,0.16), rgba(255,255,255,0.06));
+    }
+    .cta-box h2 {
+      margin: 0 0 14px;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+    .cta-box p {
+      margin: 0 auto 24px;
+      max-width: 760px;
+      color: #d8e2f2;
+      font-size: 1.05rem;
+    }
+    .contact-card { padding: 28px; }
+    .contact-card h3 { margin-top: 0; }
+    .contact-list { display: grid; gap: 12px; color: var(--muted); }
+    .contact-list strong { color: var(--text); display: block; }
+    footer { padding: 40px 0 70px; color: #c4d0e5; }
+    footer h4 { margin-top: 0; color: #fff; }
+    footer p, footer li { color: #b6c3d9; }
+    footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+    .copyright {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.92rem;
+      color: #9fb0c8;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: .65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .footer-grid,
+      .services-grid,
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .menu { display: none; }
+      .stats,
+      .about-grid,
+      .services-grid,
+      .process-grid,
+      .contact-grid,
+      .footer-grid,
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+      .section { padding: 72px 0; }
+      .hero { padding-top: 36px; min-height: auto; }
+      .cta-box { padding: 30px 20px; }
+      .nav { min-height: 70px; }
+      .brand strong { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <img src="logo.png" alt="India IT Bridge logo" />
+        <strong>India IT Bridge</strong>
+      </a>
+      <nav class="menu">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="btns">
+        <a href="#services" class="btn btn-secondary">Explore Services</a>
+        <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal visible">
+          <span class="eyebrow">Technology. Infrastructure. AI. Growth.</span>
+          <h1 class="title">Bridging business with <span>future-ready technology</span></h1>
+          <p class="lead">
+            India IT Bridge designs, builds, and manages complete technology ecosystems for modern businesses — from cloud infrastructure and networking to websites, digital growth, AI adoption, and custom internal tools.
+          </p>
+          <div class="btns" style="margin-top:26px;">
+            <a href="#contact" class="btn btn-primary">Talk to Us</a>
+            <a href="#about" class="btn btn-secondary">About the Company</a>
+          </div>
+          <div class="pill-row">
+            <div class="pill">AWS · Azure · Google Cloud</div>
+            <div class="pill">Website & Digital Marketing</div>
+            <div class="pill">Corporate AI Enablement</div>
+            <div class="pill">SOP & Process Support</div>
+          </div>
+          <div class="stats">
+            <div class="metric">
+              <h3>360°</h3>
+              <p>End-to-end IT and business technology support</p>
+            </div>
+            <div class="metric">
+              <h3>Cloud</h3>
+              <p>Secure setup, migration, networking, and optimization</p>
+            </div>
+            <div class="metric">
+              <h3>AI</h3>
+              <p>Training and implementation for real business use cases</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card hero-visual reveal">
+          <div class="hero-logo">
+            <img src="logo.png" alt="India IT Bridge brand" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">About Us</span>
+          <h2>Your end-to-end technology partner</h2>
+          <p>
+            We help organizations modernize infrastructure, streamline IT operations, strengthen digital presence, and implement practical AI. Our approach combines technical depth with business understanding, so every solution supports measurable growth.
+          </p>
+        </div>
+        <div class="about-grid">
+          <div class="glass reveal">
+            <p class="quote">“We don’t just provide IT services — we build reliable technology foundations that help businesses scale smarter.”</p>
+          </div>
+          <div class="glass reveal">
+            <div class="mini-grid">
+              <div class="mini-card">
+                <h4>Mission</h4>
+                <p>Empower businesses with scalable, reliable, and intelligent technology solutions.</p>
+              </div>
+              <div class="mini-card">
+                <h4>Vision</h4>
+                <p>Become a trusted partner for IT transformation, digital growth, and AI adoption.</p>
+              </div>
+              <div class="mini-card">
+                <h4>Approach</h4>
+                <p>Understand the business, design the right solution, and implement with precision.</p>
+              </div>
+              <div class="mini-card">
+                <h4>Associate Partner</h4>
+                <p>Corporate AI enablement in association with GenMind AI Academy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Services</span>
+          <h2>Built for modern IT operations and business growth</h2>
+          <p>
+            From infrastructure and procurement to AI implementation and in-house tools, India IT Bridge brings strategy, execution, and support together in one premium service stack.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal highlight">
+            <div class="icon">☁️</div>
+            <h3>Cloud Solutions Setup</h3>
+            <p>Deploy and manage scalable cloud environments across leading platforms.</p>
+            <ul>
+              <li>AWS, Microsoft Azure, and Google Cloud setup</li>
+              <li>Cloud migration and optimization</li>
+              <li>Secure architecture design</li>
+              <li>Performance and cost tuning</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">🌐</div>
+            <h3>Networking & Cloud Connectivity</h3>
+            <p>Build secure and seamless communication across locations and environments.</p>
+            <ul>
+              <li>Site-to-Site VPN</li>
+              <li>Point-to-Site VPN</li>
+              <li>VNet setup and network peering</li>
+              <li>Cross-network communication design</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">💼</div>
+            <h3>Business Suite Configuration</h3>
+            <p>Enable productivity with modern business applications and workspace tools.</p>
+            <ul>
+              <li>Google Workspace setup</li>
+              <li>Microsoft 365 configuration</li>
+              <li>Zoho Workplace implementation</li>
+              <li>Email migration and access controls</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">🖥️</div>
+            <h3>IT Infrastructure Implementation</h3>
+            <p>Design stable, secure, and scalable environments for business operations.</p>
+            <ul>
+              <li>Server and network setup</li>
+              <li>Firewall and security configuration</li>
+              <li>Hybrid infrastructure planning</li>
+              <li>Office IT deployment</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">🔄</div>
+            <h3>IT End-to-End Solutions</h3>
+            <p>Complete planning, integration, support, and long-term IT ownership.</p>
+            <ul>
+              <li>Consulting and architecture</li>
+              <li>System integration</li>
+              <li>Managed IT support</li>
+              <li>Monitoring and maintenance</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">🛒</div>
+            <h3>IT Procurement & Services</h3>
+            <p>Procure the right hardware and software with efficiency and cost control.</p>
+            <ul>
+              <li>Hardware and software sourcing</li>
+              <li>Vendor coordination</li>
+              <li>Cost optimization</li>
+              <li>Lifecycle and AMC support</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">🌍</div>
+            <h3>Website Build</h3>
+            <p>Create premium websites that communicate trust and convert attention into business.</p>
+            <ul>
+              <li>Corporate websites</li>
+              <li>Landing pages</li>
+              <li>Responsive premium UI</li>
+              <li>Fast, host-ready development</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">📈</div>
+            <h3>Digital Marketing</h3>
+            <p>Grow visibility, strengthen positioning, and generate business opportunities online.</p>
+            <ul>
+              <li>SEO and search visibility</li>
+              <li>Social media marketing</li>
+              <li>Performance campaigns</li>
+              <li>Brand promotion and lead flow</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal highlight">
+            <div class="icon">🤖</div>
+            <h3>AI Adoption & Implementation</h3>
+            <p>Practical AI services for corporate teams in association with GenMind AI Academy.</p>
+            <ul>
+              <li>Corporate AI training</li>
+              <li>Generative AI workshops</li>
+              <li>Workflow automation</li>
+              <li>AI solutions for business needs</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">🧩</div>
+            <h3>CMDB Management</h3>
+            <p>Bring visibility, control, and documentation to your IT ecosystem.</p>
+            <ul>
+              <li>Asset tracking and documentation</li>
+              <li>Configuration database setup</li>
+              <li>Infrastructure mapping</li>
+              <li>Lifecycle visibility</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">📘</div>
+            <h3>Process & SOP Support</h3>
+            <p>Study existing workflows and build practical processes that teams can follow.</p>
+            <ul>
+              <li>Process study and improvement</li>
+              <li>SOP documentation</li>
+              <li>Operational standardization</li>
+              <li>Execution support</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">🎫</div>
+            <h3>Service Request Management</h3>
+            <p>Outsourced ticket handling and ongoing IT-related support for business teams.</p>
+            <ul>
+              <li>IT service desk support</li>
+              <li>Ticket handling and follow-up</li>
+              <li>SLA-based support operations</li>
+              <li>Remote support assistance</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon">⚙️</div>
+            <h3>In-House Tool Development</h3>
+            <p>Develop custom internal tools aligned to your customer and operational needs.</p>
+            <ul>
+              <li>Dashboards and internal portals</li>
+              <li>Workflow automation tools</li>
+              <li>Business-specific applications</li>
+              <li>Custom feature development</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Process</span>
+          <h2>A clear execution model from planning to support</h2>
+          <p>Every engagement is structured to reduce complexity, improve clarity, and deliver dependable results.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-step reveal"><span>1</span><h3>Discover</h3><p>Understand goals, systems, gaps, and business priorities.</p></div>
+          <div class="process-step reveal"><span>2</span><h3>Design</h3><p>Create the right infrastructure, workflow, digital, or AI solution.</p></div>
+          <div class="process-step reveal"><span>3</span><h3>Implement</h3><p>Deploy with precision, documentation, and operational alignment.</p></div>
+          <div class="process-step reveal"><span>4</span><h3>Support</h3><p>Maintain, optimize, and scale as the business grows.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-box reveal">
+          <span class="eyebrow">Enterprise Capability</span>
+          <h2>From setup to scale. From infrastructure to intelligence.</h2>
+          <p>
+            India IT Bridge combines cloud, networking, IT support, digital execution, and AI enablement into one strategic partner model for growing businesses and enterprise teams.
+          </p>
+          <div class="btns" style="justify-content:center;">
+            <a href="#contact" class="btn btn-primary">Start a Conversation</a>
+            <a href="#services" class="btn btn-secondary">View Service Stack</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Contact</span>
+          <h2>Let’s build your next technology move</h2>
+          <p>Replace the placeholders below with your final company details before publishing.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <h3>India IT Bridge</h3>
+            <div class="contact-list">
+              <div><strong>Phone</strong>[Add your phone number]</div>
+              <div><strong>Email</strong>[Add your email address]</div>
+              <div><strong>Website</strong>[Add your domain]</div>
+              <div><strong>Location</strong>[Add your city / office address]</div>
+            </div>
+          </div>
+          <div class="contact-card reveal">
+            <h3>Core Focus Areas</h3>
+            <div class="contact-list">
+              <div><strong>Cloud & Networking</strong>AWS, Azure, Google Cloud, VPN, VNet, peering</div>
+              <div><strong>Business IT</strong>Infrastructure, procurement, support, CMDB, ticketing</div>
+              <div><strong>Digital Growth</strong>Websites, branding, SEO, digital marketing</div>
+              <div><strong>AI Enablement</strong>Corporate training and implementation with GenMind AI Academy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h4>India IT Bridge</h4>
+        <p>End-to-end IT solutions, cloud setup, digital growth, AI enablement, and custom business technology support.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li>Cloud Solutions Setup</li>
+          <li>Networking & VPN</li>
+          <li>Website Build</li>
+          <li>Digital Marketing</li>
+          <li>AI Adoption & Implementation</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Operations</h4>
+        <ul>
+          <li>CMDB Management</li>
+          <li>Process & SOP Support</li>
+          <li>Service Request Management</li>
+          <li>In-House Tool Development</li>
+          <li>Business Suite Configuration</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright">© 2026 India IT Bridge. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
